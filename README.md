@@ -11,7 +11,7 @@ Este projeto utiliza um Arduino Uno em conjunto com um leitor biométrico para c
 
 ## Tecnologias Utilizadas
 
-- **Hardware**: Arduino Uno, Leitor Biométrico.
+- **Hardware**: Arduino Uno, Leitor Biométrico, Módulo WiFi - ESP8266, Fios Jumpers Macho-Fêmea e Cabo USB.
 - **Plataforma de Nuvem**: Ubidots para armazenamento e gerenciamento de dados.
 - **Linguagem de Programação**: C/C++ para programação do Arduino.
 
