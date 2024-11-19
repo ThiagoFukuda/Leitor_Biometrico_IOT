@@ -11,7 +11,7 @@ Este projeto utiliza um Arduino Uno em conjunto com um leitor biométrico para c
 
 ## Tecnologias Utilizadas
 
-- **Hardware**: Arduino Uno, Leitor Biométrico (ex: R305 ou similar).
+- **Hardware**: Arduino Uno, Leitor Biométrico.
 - **Plataforma de Nuvem**: Ubidots para armazenamento e gerenciamento de dados.
 - **Linguagem de Programação**: C/C++ para programação do Arduino.
 
