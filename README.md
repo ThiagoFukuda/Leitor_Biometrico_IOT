@@ -27,11 +27,3 @@ Este projeto utiliza um Arduino Uno em conjunto com um leitor biométrico para c
 2. Configure a conexão com a API do Ubidots.
 3. Carregue o código no Arduino.
 4. Utilize a interface do Ubidots para gerenciar os dados.
-
-## Contribuições
-
-Sinta-se à vontade para contribuir com melhorias ou sugestões para este projeto. Pull requests são bem-vindos!
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
