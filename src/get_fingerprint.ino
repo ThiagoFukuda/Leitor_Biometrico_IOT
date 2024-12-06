@@ -10,20 +10,17 @@
 const char* ssid = "casa";
 const char* password = "asw21kl.912";
 
+#include <Adafruit_Fingerprint.h>
+#include <SoftwareSerial.h>
+
 SoftwareSerial mySerial(2, 3);
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
-Ubidots ubidots(UBIDOTS_TOKEN);
 
-void setup() {  
+const int ledPin = 10;
+
+void setup()  {  
   Serial.begin(9600);
   Serial.println("Iniciando Leitor Biometrico");
-
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("Conectado ao Wi-Fi!");
 
   finger.begin(57600);
   
@@ -33,6 +30,8 @@ void setup() {
     Serial.println("Leitor Biometrico nao encontrado");
     while (1);
   }
+  
+  pinMode(ledPin, OUTPUT);
   Serial.println("Esperando Dedo para Verificar");
 }
 
@@ -42,13 +41,9 @@ void loop() {
   if (id >= 0) {
     Serial.print("Dedo reconhecido! ID: ");
     Serial.println(id);
-
-    ubidots.add(VARIABLE_LABEL, id);
-    if (ubidots.send(DEVICE_LABEL)) {
-      Serial.println("ID enviado para a Ubidots com sucesso!");
-    } else {
-      Serial.println("Erro ao enviar ID para a Ubidots.");
-    }
+    digitalWrite(ledPin, HIGH);
+    delay(1000);
+    digitalWrite(ledPin, LOW);
   }
   
   delay(850);
